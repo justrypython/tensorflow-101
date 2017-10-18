@@ -35,7 +35,7 @@ tf.app.flags.DEFINE_string('log_dir', './log', 'the logging dir')
 
 tf.app.flags.DEFINE_boolean('restore', False, 'whether to restore from checkpoint')
 tf.app.flags.DEFINE_boolean('epoch', 1, 'Number of epoches')
-tf.app.flags.DEFINE_boolean('batch_size', 128, 'Validation batch size')
+tf.app.flags.DEFINE_integer('batch_size', 128, 'Validation batch size')
 tf.app.flags.DEFINE_string('mode', 'train', 'Running mode. One of {"train", "valid", "test"}')
 FLAGS = tf.app.flags.FLAGS
 
@@ -165,7 +165,8 @@ def train():
                     feed_dict=feed_dict)
                 train_writer.add_summary(train_summary, step)
                 end_time = time.time()
-                logger.info("the step {0} takes {1} loss {2}".format(step, end_time - start_time, loss_val))
+                if step % 1000 == 0:
+                    logger.info("the step {0} takes {1} loss {2}".format(step, end_time - start_time, loss_val))
                 if step > FLAGS.max_steps:
                     break
                 if step % FLAGS.eval_steps == 1:

@@ -48,7 +48,7 @@ for image, tagcode in read_from_gnt_dir(gnt_dir=train_data_dir):
     im = Image.fromarray(image)
     dir_name = '../data/train/' + '%0.5d'%char_dict[tagcode_unicode]
     if not os.path.exists(dir_name):
-        os.mkdir(dir_name)
+        os.makedirs(dir_name)
     im.convert('RGB').save(dir_name+'/' + str(train_counter) + '.png')
     train_counter += 1
 for image, tagcode in read_from_gnt_dir(gnt_dir=test_data_dir):
@@ -56,6 +56,6 @@ for image, tagcode in read_from_gnt_dir(gnt_dir=test_data_dir):
     im = Image.fromarray(image)
     dir_name = '../data/test/' + '%0.5d'%char_dict[tagcode_unicode]
     if not os.path.exists(dir_name):
-        os.mkdir(dir_name)
+        os.makedirs(dir_name)
     im.convert('RGB').save(dir_name+'/' + str(test_counter) + '.png')
     test_counter += 1
