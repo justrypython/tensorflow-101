@@ -28,7 +28,7 @@ tf.app.flags.DEFINE_integer('max_steps', 12002, 'the max training steps ')
 tf.app.flags.DEFINE_integer('eval_steps', 50, "the step num to eval")
 tf.app.flags.DEFINE_integer('save_steps', 2000, "the steps to save")
 
-tf.app.flags.DEFINE_string('checkpoint_dir', './checkpoint/', 'the checkpoint dir')
+tf.app.flags.DEFINE_string('checkpoint_dir', 'checkpoint/', 'the checkpoint dir')
 tf.app.flags.DEFINE_string('train_data_dir', '../data/train/', 'the train dataset dir')
 tf.app.flags.DEFINE_string('test_data_dir', '../data/test/', 'the test dataset dir')
 tf.app.flags.DEFINE_string('log_dir', './log', 'the logging dir')
