@@ -10,5 +10,5 @@ GAN/*/asset/*
 data/images/*.png
 billiard_detection/data/images/*.png
 chinese_hand_write_rec/data
-chinese_hand_write_rec/src/checkpoint
+chinese_hand_write_rec/src/checkpoint/
 chinese_hand_write_rec/src/log
